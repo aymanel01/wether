@@ -19,7 +19,7 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
   Future<List<WeatherModel>> getWeatherData() async {
     try {
       final data = await apiClient.getWeatherRaw();
-      return _parseWeatherData(data);
+      return _parseWeatherData(data as Map<String, dynamic>);
     } catch (e) {
       print('API failed, using mock data: $e');
       return await mockDataSource.getWeatherData();

@@ -8,5 +8,5 @@ abstract class WeatherApiClient {
   factory WeatherApiClient(Dio dio, {String baseUrl}) = _WeatherApiClient;
 
   @GET('/weather')
-  Future<Map<String, dynamic>> getWeatherRaw();
+  Future<dynamic> getWeatherRaw();
 }
