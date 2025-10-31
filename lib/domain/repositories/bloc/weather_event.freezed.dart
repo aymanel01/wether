@@ -12,8 +12,7 @@ part of 'weather_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$WeatherEvent {
@@ -21,42 +20,47 @@ mixin _$WeatherEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() loadWeatherData,
     required TResult Function() refreshWeatherData,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadWeatherData,
     TResult? Function()? refreshWeatherData,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadWeatherData,
     TResult Function()? refreshWeatherData,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadWeatherData value) loadWeatherData,
     required TResult Function(RefreshWeatherData value) refreshWeatherData,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadWeatherData value)? loadWeatherData,
     TResult? Function(RefreshWeatherData value)? refreshWeatherData,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadWeatherData value)? loadWeatherData,
     TResult Function(RefreshWeatherData value)? refreshWeatherData,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WeatherEventCopyWith<$Res> {
   factory $WeatherEventCopyWith(
-    WeatherEvent value,
-    $Res Function(WeatherEvent) then,
-  ) = _$WeatherEventCopyWithImpl<$Res, WeatherEvent>;
+          WeatherEvent value, $Res Function(WeatherEvent) then) =
+      _$WeatherEventCopyWithImpl<$Res, WeatherEvent>;
 }
 
 /// @nodoc
@@ -68,17 +72,13 @@ class _$WeatherEventCopyWithImpl<$Res, $Val extends WeatherEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of WeatherEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$LoadWeatherDataImplCopyWith<$Res> {
-  factory _$$LoadWeatherDataImplCopyWith(
-    _$LoadWeatherDataImpl value,
-    $Res Function(_$LoadWeatherDataImpl) then,
-  ) = __$$LoadWeatherDataImplCopyWithImpl<$Res>;
+  factory _$$LoadWeatherDataImplCopyWith(_$LoadWeatherDataImpl value,
+          $Res Function(_$LoadWeatherDataImpl) then) =
+      __$$LoadWeatherDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,12 +86,8 @@ class __$$LoadWeatherDataImplCopyWithImpl<$Res>
     extends _$WeatherEventCopyWithImpl<$Res, _$LoadWeatherDataImpl>
     implements _$$LoadWeatherDataImplCopyWith<$Res> {
   __$$LoadWeatherDataImplCopyWithImpl(
-    _$LoadWeatherDataImpl _value,
-    $Res Function(_$LoadWeatherDataImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WeatherEvent
-  /// with the given fields replaced by the non-null parameter values.
+      _$LoadWeatherDataImpl _value, $Res Function(_$LoadWeatherDataImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -182,23 +178,18 @@ abstract class LoadWeatherData implements WeatherEvent {
 
 /// @nodoc
 abstract class _$$RefreshWeatherDataImplCopyWith<$Res> {
-  factory _$$RefreshWeatherDataImplCopyWith(
-    _$RefreshWeatherDataImpl value,
-    $Res Function(_$RefreshWeatherDataImpl) then,
-  ) = __$$RefreshWeatherDataImplCopyWithImpl<$Res>;
+  factory _$$RefreshWeatherDataImplCopyWith(_$RefreshWeatherDataImpl value,
+          $Res Function(_$RefreshWeatherDataImpl) then) =
+      __$$RefreshWeatherDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$RefreshWeatherDataImplCopyWithImpl<$Res>
     extends _$WeatherEventCopyWithImpl<$Res, _$RefreshWeatherDataImpl>
     implements _$$RefreshWeatherDataImplCopyWith<$Res> {
-  __$$RefreshWeatherDataImplCopyWithImpl(
-    _$RefreshWeatherDataImpl _value,
-    $Res Function(_$RefreshWeatherDataImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WeatherEvent
-  /// with the given fields replaced by the non-null parameter values.
+  __$$RefreshWeatherDataImplCopyWithImpl(_$RefreshWeatherDataImpl _value,
+      $Res Function(_$RefreshWeatherDataImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc

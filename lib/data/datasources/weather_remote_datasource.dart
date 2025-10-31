@@ -1,38 +1,25 @@
-import 'package:dio/dio.dart';
 import '../models/weather_model.dart';
 import 'weather_mock_datasource.dart';
+import 'weather_api_client.dart';
 
 abstract class WeatherRemoteDataSource {
   Future<List<WeatherModel>> getWeatherData();
 }
 
 class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
-  final Dio dio;
-  final String baseUrl;
+  final WeatherApiClient apiClient;
   final WeatherMockDataSource mockDataSource;
 
   WeatherRemoteDataSourceImpl({
-    required this.dio,
-    this.baseUrl = 'http://10.0.2.2:3000',
+    required this.apiClient,
     WeatherMockDataSource? mockDataSource,
   }) : mockDataSource = mockDataSource ?? WeatherMockDataSource();
 
   @override
   Future<List<WeatherModel>> getWeatherData() async {
     try {
-      final response = await dio.get(
-        '$baseUrl/weather',
-        options: Options(
-          headers: {'Content-Type': 'application/json'},
-          receiveTimeout: const Duration(seconds: 10),
-          sendTimeout: const Duration(seconds: 10),
-        ),
-      );
-      if (response.statusCode == 200) {
-        return _parseWeatherData(response.data);
-      } else {
-        throw Exception('API returned ${response.statusCode}');
-      }
+      final data = await apiClient.getWeatherRaw();
+      return _parseWeatherData(data);
     } catch (e) {
       print('API failed, using mock data: $e');
       return await mockDataSource.getWeatherData();

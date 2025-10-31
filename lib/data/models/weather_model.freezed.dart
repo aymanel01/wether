@@ -12,8 +12,7 @@ part of 'weather_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WeatherModel _$WeatherModelFromJson(Map<String, dynamic> json) {
   return _WeatherModel.fromJson(json);
@@ -26,12 +25,8 @@ mixin _$WeatherModel {
   double get apparentTemperature => throw _privateConstructorUsedError;
   DateTime get time => throw _privateConstructorUsedError;
 
-  /// Serializes this WeatherModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WeatherModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WeatherModelCopyWith<WeatherModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -39,16 +34,14 @@ mixin _$WeatherModel {
 /// @nodoc
 abstract class $WeatherModelCopyWith<$Res> {
   factory $WeatherModelCopyWith(
-    WeatherModel value,
-    $Res Function(WeatherModel) then,
-  ) = _$WeatherModelCopyWithImpl<$Res, WeatherModel>;
+          WeatherModel value, $Res Function(WeatherModel) then) =
+      _$WeatherModelCopyWithImpl<$Res, WeatherModel>;
   @useResult
-  $Res call({
-    double windSpeed,
-    double temperature,
-    double apparentTemperature,
-    DateTime time,
-  });
+  $Res call(
+      {double windSpeed,
+      double temperature,
+      double apparentTemperature,
+      DateTime time});
 }
 
 /// @nodoc
@@ -61,8 +54,6 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WeatherModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -71,27 +62,24 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
     Object? apparentTemperature = null,
     Object? time = null,
   }) {
-    return _then(
-      _value.copyWith(
-            windSpeed: null == windSpeed
-                ? _value.windSpeed
-                : windSpeed // ignore: cast_nullable_to_non_nullable
-                      as double,
-            temperature: null == temperature
-                ? _value.temperature
-                : temperature // ignore: cast_nullable_to_non_nullable
-                      as double,
-            apparentTemperature: null == apparentTemperature
-                ? _value.apparentTemperature
-                : apparentTemperature // ignore: cast_nullable_to_non_nullable
-                      as double,
-            time: null == time
-                ? _value.time
-                : time // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      apparentTemperature: null == apparentTemperature
+          ? _value.apparentTemperature
+          : apparentTemperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
   }
 }
 
@@ -99,17 +87,15 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
 abstract class _$$WeatherModelImplCopyWith<$Res>
     implements $WeatherModelCopyWith<$Res> {
   factory _$$WeatherModelImplCopyWith(
-    _$WeatherModelImpl value,
-    $Res Function(_$WeatherModelImpl) then,
-  ) = __$$WeatherModelImplCopyWithImpl<$Res>;
+          _$WeatherModelImpl value, $Res Function(_$WeatherModelImpl) then) =
+      __$$WeatherModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    double windSpeed,
-    double temperature,
-    double apparentTemperature,
-    DateTime time,
-  });
+  $Res call(
+      {double windSpeed,
+      double temperature,
+      double apparentTemperature,
+      DateTime time});
 }
 
 /// @nodoc
@@ -117,12 +103,9 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
     extends _$WeatherModelCopyWithImpl<$Res, _$WeatherModelImpl>
     implements _$$WeatherModelImplCopyWith<$Res> {
   __$$WeatherModelImplCopyWithImpl(
-    _$WeatherModelImpl _value,
-    $Res Function(_$WeatherModelImpl) _then,
-  ) : super(_value, _then);
+      _$WeatherModelImpl _value, $Res Function(_$WeatherModelImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of WeatherModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,38 +114,35 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
     Object? apparentTemperature = null,
     Object? time = null,
   }) {
-    return _then(
-      _$WeatherModelImpl(
-        windSpeed: null == windSpeed
-            ? _value.windSpeed
-            : windSpeed // ignore: cast_nullable_to_non_nullable
-                  as double,
-        temperature: null == temperature
-            ? _value.temperature
-            : temperature // ignore: cast_nullable_to_non_nullable
-                  as double,
-        apparentTemperature: null == apparentTemperature
-            ? _value.apparentTemperature
-            : apparentTemperature // ignore: cast_nullable_to_non_nullable
-                  as double,
-        time: null == time
-            ? _value.time
-            : time // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-      ),
-    );
+    return _then(_$WeatherModelImpl(
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      apparentTemperature: null == apparentTemperature
+          ? _value.apparentTemperature
+          : apparentTemperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$WeatherModelImpl implements _WeatherModel {
-  const _$WeatherModelImpl({
-    required this.windSpeed,
-    required this.temperature,
-    required this.apparentTemperature,
-    required this.time,
-  });
+  const _$WeatherModelImpl(
+      {required this.windSpeed,
+      required this.temperature,
+      required this.apparentTemperature,
+      required this.time});
 
   factory _$WeatherModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherModelImplFromJson(json);
@@ -195,19 +175,12 @@ class _$WeatherModelImpl implements _WeatherModel {
             (identical(other.time, time) || other.time == time));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    windSpeed,
-    temperature,
-    apparentTemperature,
-    time,
-  );
+      runtimeType, windSpeed, temperature, apparentTemperature, time);
 
-  /// Create a copy of WeatherModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WeatherModelImplCopyWith<_$WeatherModelImpl> get copyWith =>
@@ -215,17 +188,18 @@ class _$WeatherModelImpl implements _WeatherModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$WeatherModelImplToJson(this);
+    return _$$WeatherModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _WeatherModel implements WeatherModel {
-  const factory _WeatherModel({
-    required final double windSpeed,
-    required final double temperature,
-    required final double apparentTemperature,
-    required final DateTime time,
-  }) = _$WeatherModelImpl;
+  const factory _WeatherModel(
+      {required final double windSpeed,
+      required final double temperature,
+      required final double apparentTemperature,
+      required final DateTime time}) = _$WeatherModelImpl;
 
   factory _WeatherModel.fromJson(Map<String, dynamic> json) =
       _$WeatherModelImpl.fromJson;
@@ -238,11 +212,8 @@ abstract class _WeatherModel implements WeatherModel {
   double get apparentTemperature;
   @override
   DateTime get time;
-
-  /// Create a copy of WeatherModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WeatherModelImplCopyWith<_$WeatherModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

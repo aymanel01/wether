@@ -12,8 +12,7 @@ part of 'weather_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$WeatherState {
@@ -23,14 +22,16 @@ mixin _$WeatherState {
     required TResult Function() loading,
     required TResult Function(List<WeatherEntity> weatherData) loaded,
     required TResult Function(String message) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<WeatherEntity> weatherData)? loaded,
     TResult? Function(String message)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -38,21 +39,24 @@ mixin _$WeatherState {
     TResult Function(List<WeatherEntity> weatherData)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(WeatherInitial value) initial,
     required TResult Function(WeatherLoadingState value) loading,
     required TResult Function(WeatherLoaded value) loaded,
     required TResult Function(WeatherErrorState value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(WeatherInitial value)? initial,
     TResult? Function(WeatherLoadingState value)? loading,
     TResult? Function(WeatherLoaded value)? loaded,
     TResult? Function(WeatherErrorState value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(WeatherInitial value)? initial,
@@ -60,15 +64,15 @@ mixin _$WeatherState {
     TResult Function(WeatherLoaded value)? loaded,
     TResult Function(WeatherErrorState value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WeatherStateCopyWith<$Res> {
   factory $WeatherStateCopyWith(
-    WeatherState value,
-    $Res Function(WeatherState) then,
-  ) = _$WeatherStateCopyWithImpl<$Res, WeatherState>;
+          WeatherState value, $Res Function(WeatherState) then) =
+      _$WeatherStateCopyWithImpl<$Res, WeatherState>;
 }
 
 /// @nodoc
@@ -80,17 +84,13 @@ class _$WeatherStateCopyWithImpl<$Res, $Val extends WeatherState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$WeatherInitialImplCopyWith<$Res> {
-  factory _$$WeatherInitialImplCopyWith(
-    _$WeatherInitialImpl value,
-    $Res Function(_$WeatherInitialImpl) then,
-  ) = __$$WeatherInitialImplCopyWithImpl<$Res>;
+  factory _$$WeatherInitialImplCopyWith(_$WeatherInitialImpl value,
+          $Res Function(_$WeatherInitialImpl) then) =
+      __$$WeatherInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -98,12 +98,8 @@ class __$$WeatherInitialImplCopyWithImpl<$Res>
     extends _$WeatherStateCopyWithImpl<$Res, _$WeatherInitialImpl>
     implements _$$WeatherInitialImplCopyWith<$Res> {
   __$$WeatherInitialImplCopyWithImpl(
-    _$WeatherInitialImpl _value,
-    $Res Function(_$WeatherInitialImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
+      _$WeatherInitialImpl _value, $Res Function(_$WeatherInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -206,23 +202,18 @@ abstract class WeatherInitial implements WeatherState {
 
 /// @nodoc
 abstract class _$$WeatherLoadingStateImplCopyWith<$Res> {
-  factory _$$WeatherLoadingStateImplCopyWith(
-    _$WeatherLoadingStateImpl value,
-    $Res Function(_$WeatherLoadingStateImpl) then,
-  ) = __$$WeatherLoadingStateImplCopyWithImpl<$Res>;
+  factory _$$WeatherLoadingStateImplCopyWith(_$WeatherLoadingStateImpl value,
+          $Res Function(_$WeatherLoadingStateImpl) then) =
+      __$$WeatherLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$WeatherLoadingStateImplCopyWithImpl<$Res>
     extends _$WeatherStateCopyWithImpl<$Res, _$WeatherLoadingStateImpl>
     implements _$$WeatherLoadingStateImplCopyWith<$Res> {
-  __$$WeatherLoadingStateImplCopyWithImpl(
-    _$WeatherLoadingStateImpl _value,
-    $Res Function(_$WeatherLoadingStateImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
+  __$$WeatherLoadingStateImplCopyWithImpl(_$WeatherLoadingStateImpl _value,
+      $Res Function(_$WeatherLoadingStateImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -327,9 +318,8 @@ abstract class WeatherLoadingState implements WeatherState {
 /// @nodoc
 abstract class _$$WeatherLoadedImplCopyWith<$Res> {
   factory _$$WeatherLoadedImplCopyWith(
-    _$WeatherLoadedImpl value,
-    $Res Function(_$WeatherLoadedImpl) then,
-  ) = __$$WeatherLoadedImplCopyWithImpl<$Res>;
+          _$WeatherLoadedImpl value, $Res Function(_$WeatherLoadedImpl) then) =
+      __$$WeatherLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<WeatherEntity> weatherData});
 }
@@ -339,23 +329,20 @@ class __$$WeatherLoadedImplCopyWithImpl<$Res>
     extends _$WeatherStateCopyWithImpl<$Res, _$WeatherLoadedImpl>
     implements _$$WeatherLoadedImplCopyWith<$Res> {
   __$$WeatherLoadedImplCopyWithImpl(
-    _$WeatherLoadedImpl _value,
-    $Res Function(_$WeatherLoadedImpl) _then,
-  ) : super(_value, _then);
+      _$WeatherLoadedImpl _value, $Res Function(_$WeatherLoadedImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? weatherData = null}) {
-    return _then(
-      _$WeatherLoadedImpl(
-        null == weatherData
-            ? _value._weatherData
-            : weatherData // ignore: cast_nullable_to_non_nullable
-                  as List<WeatherEntity>,
-      ),
-    );
+  $Res call({
+    Object? weatherData = null,
+  }) {
+    return _then(_$WeatherLoadedImpl(
+      null == weatherData
+          ? _value._weatherData
+          : weatherData // ignore: cast_nullable_to_non_nullable
+              as List<WeatherEntity>,
+    ));
   }
 }
 
@@ -363,7 +350,7 @@ class __$$WeatherLoadedImplCopyWithImpl<$Res>
 
 class _$WeatherLoadedImpl implements WeatherLoaded {
   const _$WeatherLoadedImpl(final List<WeatherEntity> weatherData)
-    : _weatherData = weatherData;
+      : _weatherData = weatherData;
 
   final List<WeatherEntity> _weatherData;
   @override
@@ -383,21 +370,15 @@ class _$WeatherLoadedImpl implements WeatherLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherLoadedImpl &&
-            const DeepCollectionEquality().equals(
-              other._weatherData,
-              _weatherData,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._weatherData, _weatherData));
   }
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_weatherData),
-  );
+      runtimeType, const DeepCollectionEquality().hash(_weatherData));
 
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WeatherLoadedImplCopyWith<_$WeatherLoadedImpl> get copyWith =>
@@ -483,20 +464,16 @@ abstract class WeatherLoaded implements WeatherState {
       _$WeatherLoadedImpl;
 
   List<WeatherEntity> get weatherData;
-
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WeatherLoadedImplCopyWith<_$WeatherLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$WeatherErrorStateImplCopyWith<$Res> {
-  factory _$$WeatherErrorStateImplCopyWith(
-    _$WeatherErrorStateImpl value,
-    $Res Function(_$WeatherErrorStateImpl) then,
-  ) = __$$WeatherErrorStateImplCopyWithImpl<$Res>;
+  factory _$$WeatherErrorStateImplCopyWith(_$WeatherErrorStateImpl value,
+          $Res Function(_$WeatherErrorStateImpl) then) =
+      __$$WeatherErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
@@ -505,24 +482,21 @@ abstract class _$$WeatherErrorStateImplCopyWith<$Res> {
 class __$$WeatherErrorStateImplCopyWithImpl<$Res>
     extends _$WeatherStateCopyWithImpl<$Res, _$WeatherErrorStateImpl>
     implements _$$WeatherErrorStateImplCopyWith<$Res> {
-  __$$WeatherErrorStateImplCopyWithImpl(
-    _$WeatherErrorStateImpl _value,
-    $Res Function(_$WeatherErrorStateImpl) _then,
-  ) : super(_value, _then);
+  __$$WeatherErrorStateImplCopyWithImpl(_$WeatherErrorStateImpl _value,
+      $Res Function(_$WeatherErrorStateImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$WeatherErrorStateImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$WeatherErrorStateImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -550,16 +524,12 @@ class _$WeatherErrorStateImpl implements WeatherErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WeatherErrorStateImplCopyWith<_$WeatherErrorStateImpl> get copyWith =>
       __$$WeatherErrorStateImplCopyWithImpl<_$WeatherErrorStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -641,10 +611,7 @@ abstract class WeatherErrorState implements WeatherState {
       _$WeatherErrorStateImpl;
 
   String get message;
-
-  /// Create a copy of WeatherState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WeatherErrorStateImplCopyWith<_$WeatherErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

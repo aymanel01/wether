@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import '../data/datasources/weather_remote_datasource.dart';
+import '../data/datasources/weather_api_client.dart';
 import '../domain/repositories/weather_repository.dart';
 import '../domain/usecases/get_weather_data_usecase.dart';
 import '../data/repositorise/weather_repository_impl.dart';
@@ -14,9 +15,10 @@ Future<void> init() async {
     () => WeatherRepositoryImpl(remoteDataSource: sl()),
   );
   sl.registerLazySingleton<WeatherRemoteDataSource>(
-    () => WeatherRemoteDataSourceImpl(dio: sl()),
+    () => WeatherRemoteDataSourceImpl(apiClient: sl()),
   );
   sl.registerLazySingleton(() => Dio());
+  sl.registerLazySingleton<WeatherApiClient>(() => WeatherApiClient(sl()));
 
   sl.registerLazySingleton(() => GetWeatherDataUseCase(sl()));
 }
