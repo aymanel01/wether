@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../domain/repositories/bloc/weather_bloc.dart';
-import '../../domain/repositories/bloc/weather_event.dart';
-import '../../domain/repositories/bloc/weather_state.dart';
+import '../bloc/weather_bloc.dart';
+import '../bloc/weather_event.dart';
+import '../bloc/weather_state.dart';
 import '../widgets/weather_list.dart';
 import '../widgets/weather_loading.dart';
 import '../widgets/weather_error.dart';

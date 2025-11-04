@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../entities/weather_entity.dart';
+import '../../domain/entities/weather_entity.dart';
 
 part 'weather_state.freezed.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'injection/injection_container.dart' as di;
-import 'domain/repositories/bloc/weather_bloc.dart';
+import 'presentation/bloc/weather_bloc.dart';
 import 'presentation/pages/weather_page.dart';
-import 'domain/repositories/bloc/weather_event.dart';
+import 'presentation/bloc/weather_event.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       home: BlocProvider(
-        create: (context) => di.sl<WeatherBloc>()..add(const LoadWeatherData()),
+        create: (context) =>
+            di.serviceLocator<WeatherBloc>()..add(const LoadWeatherData()),
         child: const WeatherPage(),
       ),
     );

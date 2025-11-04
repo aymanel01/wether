@@ -14,14 +14,11 @@ class WeatherList extends StatelessWidget {
     }
 
     return RefreshIndicator(
-      onRefresh: () async {
-        // This will be handled by the parent widget
-      },
+      onRefresh: () async {},
       child: ListView.builder(
         itemCount: weatherData.length,
         itemBuilder: (context, index) {
-          final data = weatherData[index];
-          return WeatherCard(weatherData: data);
+          return WeatherCard(weatherData: weatherData[index]);
         },
       ),
     );

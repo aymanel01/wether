@@ -1,24 +1,25 @@
 import 'package:get_it/get_it.dart';
-import 'package:dio/dio.dart';
 import '../data/datasources/weather_remote_datasource.dart';
 import '../data/datasources/weather_api_client.dart';
 import '../domain/repositories/weather_repository.dart';
-import '../domain/usecases/get_weather_data_usecase.dart';
 import '../data/repositorise/weather_repository_impl.dart';
-import '../domain/repositories/bloc/weather_bloc.dart';
+import '../presentation/bloc/weather_bloc.dart';
+import 'dio_config.dart';
 
-final sl = GetIt.instance;
+final serviceLocator = GetIt.instance;
 
 Future<void> init() async {
-  sl.registerFactory(() => WeatherBloc(getWeatherDataUseCase: sl()));
-  sl.registerLazySingleton<WeatherRepository>(
-    () => WeatherRepositoryImpl(remoteDataSource: sl()),
+  serviceLocator.registerLazySingleton(() => createDio());
+  serviceLocator.registerLazySingleton<WeatherApiClient>(
+    () => WeatherApiClient(serviceLocator()),
   );
-  sl.registerLazySingleton<WeatherRemoteDataSource>(
-    () => WeatherRemoteDataSourceImpl(apiClient: sl()),
+  serviceLocator.registerLazySingleton<WeatherRemoteDataSource>(
+    () => WeatherRemoteDataSourceImpl(apiClient: serviceLocator()),
   );
-  sl.registerLazySingleton(() => Dio());
-  sl.registerLazySingleton<WeatherApiClient>(() => WeatherApiClient(sl()));
-
-  sl.registerLazySingleton(() => GetWeatherDataUseCase(sl()));
+  serviceLocator.registerLazySingleton<WeatherRepository>(
+    () => WeatherRepositoryImpl(remoteDataSource: serviceLocator()),
+  );
+  serviceLocator.registerFactory(
+    () => WeatherBloc(weatherRepository: serviceLocator()),
+  );
 }
