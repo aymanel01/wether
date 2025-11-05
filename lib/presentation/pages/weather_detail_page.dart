@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/weather_entity.dart';
+import '../../data/models/weather_model.dart';
 
 class WeatherDetailPage extends StatelessWidget {
-  final WeatherEntity weatherData;
+  final WeatherModel weatherData;
 
   const WeatherDetailPage({super.key, required this.weatherData});
 
   @override
   Widget build(BuildContext context) {
+    final time = weatherData.time;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          '${weatherData.time.day}/${weatherData.time.month}/${weatherData.time.year}',
-        ),
+        title: Text('${time.day}/${time.month}/${time.year}'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,6 +34,8 @@ class WeatherDetailPage extends StatelessWidget {
   }
 
   Widget _buildTimeCard() {
+    final t = weatherData.time;
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -56,11 +58,11 @@ class WeatherDetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              '${weatherData.time.hour}:${weatherData.time.minute.toString().padLeft(2, '0')}',
+              '${t.hour}:${t.minute.toString().padLeft(2, '0')}',
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             Text(
-              '${weatherData.time.day}/${weatherData.time.month}/${weatherData.time.year}',
+              '${t.day}/${t.month}/${t.year}',
               style: TextStyle(fontSize: 16, color: Colors.grey[600]),
             ),
           ],
@@ -195,33 +197,26 @@ class WeatherDetailPage extends StatelessWidget {
     );
   }
 
-  String _getTemperatureDescription(double temperature) {
-    if (temperature < 0) return 'Très froid';
-    if (temperature < 10) return 'Froid';
-    if (temperature < 20) return 'Frais';
-    if (temperature < 30) return 'Agréable';
+  String _getTemperatureDescription(double temp) {
+    if (temp < 0) return 'Très froid';
+    if (temp < 10) return 'Froid';
+    if (temp < 20) return 'Frais';
+    if (temp < 30) return 'Agréable';
     return 'Chaud';
   }
 
-  String _getWindDescription(double windSpeed) {
-    if (windSpeed < 5) return 'Calme';
-    if (windSpeed < 15) return 'Léger';
-    if (windSpeed < 30) return 'Modéré';
-    if (windSpeed < 50) return 'Fort';
+  String _getWindDescription(double speed) {
+    if (speed < 5) return 'Calme';
+    if (speed < 15) return 'Léger';
+    if (speed < 30) return 'Modéré';
+    if (speed < 50) return 'Fort';
     return 'Très fort';
   }
 
-  String _getApparentTemperatureDescription(
-    double temperature,
-    double apparentTemperature,
-  ) {
-    final difference = apparentTemperature - temperature;
-    if (difference.abs() < 1) {
-      return 'Ressenti identique à la température réelle';
-    } else if (difference > 0) {
-      return 'Ressenti plus chaud de ${difference.toStringAsFixed(1)}°C';
-    } else {
-      return 'Ressenti plus froid de ${(-difference).toStringAsFixed(1)}°C';
-    }
+  String _getApparentTemperatureDescription(double temp, double apparent) {
+    final diff = apparent - temp;
+    if (diff.abs() < 1) return 'Ressenti identique à la température réelle';
+    if (diff > 0) return 'Ressenti plus chaud de ${diff.toStringAsFixed(1)}°C';
+    return 'Ressenti plus froid de ${(-diff).toStringAsFixed(1)}°C';
   }
 }

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       home: BlocProvider(
-        create: (context) =>
+        create: (_) =>
             di.serviceLocator<WeatherBloc>()..add(const LoadWeatherData()),
         child: const WeatherPage(),
       ),

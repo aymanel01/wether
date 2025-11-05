@@ -1,4 +1,3 @@
-import '../../domain/entities/weather_entity.dart';
 import '../../domain/repositories/weather_repository.dart';
 import '../datasources/weather_remote_datasource.dart';
 import '../models/weather_model.dart';
@@ -9,8 +8,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
   WeatherRepositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<List<WeatherEntity>> getWeatherData() async {
-    final weatherModels = await remoteDataSource.getWeatherData();
-    return weatherModels.map((model) => model.toEntity()).toList();
-  }
+  Future<List<WeatherModel>> getWeatherData() =>
+      remoteDataSource.getWeatherData();
 }

@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:dio/dio.dart';
 import '../data/datasources/weather_remote_datasource.dart';
 import '../data/datasources/weather_api_client.dart';
 import '../domain/repositories/weather_repository.dart';
@@ -9,9 +10,9 @@ import 'dio_config.dart';
 final serviceLocator = GetIt.instance;
 
 Future<void> init() async {
-  serviceLocator.registerLazySingleton(() => createDio());
+  serviceLocator.registerLazySingleton<Dio>(() => DioConfig().dio);
   serviceLocator.registerLazySingleton<WeatherApiClient>(
-    () => WeatherApiClient(serviceLocator()),
+    () => WeatherApiClient(serviceLocator<Dio>()),
   );
   serviceLocator.registerLazySingleton<WeatherRemoteDataSource>(
     () => WeatherRemoteDataSourceImpl(apiClient: serviceLocator()),

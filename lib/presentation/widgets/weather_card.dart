@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/weather_entity.dart';
+import '../../data/models/weather_model.dart';
 import '../pages/weather_detail_page.dart';
 
 class WeatherCard extends StatelessWidget {
-  final WeatherEntity weatherData;
+  final WeatherModel weatherData;
 
   const WeatherCard({super.key, required this.weatherData});
 
   @override
   Widget build(BuildContext context) {
+    final time = weatherData.time;
+    final timeStr =
+        '${time.day}/${time.month}/${time.year} ${time.hour}:${time.minute.toString().padLeft(2, '0')}';
+
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => WeatherDetailPage(weatherData: weatherData),
-            ),
-          );
-        },
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => WeatherDetailPage(weatherData: weatherData),
+          ),
+        ),
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -30,7 +32,7 @@ class WeatherCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '${weatherData.time.day}/${weatherData.time.month}/${weatherData.time.year} ${weatherData.time.hour}:${weatherData.time.minute.toString().padLeft(2, '0')}',
+                    timeStr,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

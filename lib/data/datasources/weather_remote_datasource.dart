@@ -12,37 +12,32 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
 
   @override
   Future<List<WeatherModel>> getWeatherData() async {
-    final data = await apiClient.getWeatherRaw();
-    return _parseWeatherData(data as Map<String, dynamic>);
+    final response = await apiClient.getWeatherRaw();
+    return _parseWeatherData(response as Map<String, dynamic>);
   }
 
-  List<WeatherModel> _parseWeatherData(Map<String, dynamic> jsonData) {
-    final weatherList = <WeatherModel>[];
-    final data = jsonData['data'];
-    if (data == null || !data.containsKey('timelines')) {
-      return weatherList;
-    }
+  List<WeatherModel> _parseWeatherData(Map<String, dynamic> json) {
+    final List<WeatherModel> result = [];
+
+    final data = json['data'];
+    if (data == null || !data.containsKey('timelines')) return result;
 
     final timelines = data['timelines'] as List?;
-    if (timelines == null || timelines.isEmpty) {
-      return weatherList;
-    }
+    if (timelines == null || timelines.isEmpty) return result;
 
-    final hourlyData = timelines.firstWhere(
-      (timeline) => timeline['timestep'] == '1h',
+    final hourly = timelines.firstWhere(
+      (t) => t['timestep'] == '1h',
       orElse: () => timelines.first,
     );
 
-    final intervals = hourlyData['intervals'] as List?;
-    if (intervals == null) {
-      return weatherList;
-    }
+    final intervals = hourly['intervals'] as List?;
+    if (intervals == null) return result;
 
     for (final interval in intervals) {
       final values = interval['values'];
       if (values == null) continue;
 
-      weatherList.add(
+      result.add(
         WeatherModel(
           windSpeed: (values['windSpeed'] ?? 0.0).toDouble(),
           temperature: (values['temperature'] ?? 0.0).toDouble(),
@@ -53,6 +48,6 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
       );
     }
 
-    return weatherList;
+    return result;
   }
 }

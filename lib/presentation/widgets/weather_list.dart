@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/weather_entity.dart';
+import '../../data/models/weather_model.dart';
 import 'weather_card.dart';
 
 class WeatherList extends StatelessWidget {
-  final List<WeatherEntity> weatherData;
+  final List<WeatherModel> weatherData;
 
   const WeatherList({super.key, required this.weatherData});
 
@@ -17,9 +17,7 @@ class WeatherList extends StatelessWidget {
       onRefresh: () async {},
       child: ListView.builder(
         itemCount: weatherData.length,
-        itemBuilder: (context, index) {
-          return WeatherCard(weatherData: weatherData[index]);
-        },
+        itemBuilder: (_, i) => WeatherCard(weatherData: weatherData[i]),
       ),
     );
   }

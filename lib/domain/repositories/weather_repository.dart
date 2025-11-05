@@ -1,5 +1,5 @@
-import '../entities/weather_entity.dart';
+import '../../data/models/weather_model.dart';
 
 abstract class WeatherRepository {
-  Future<List<WeatherEntity>> getWeatherData();
+  Future<List<WeatherModel>> getWeatherData();
 }

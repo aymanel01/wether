@@ -8,20 +8,20 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   WeatherBloc({required this.weatherRepository})
     : super(const WeatherState.initial()) {
-    on<LoadWeatherData>(_onLoadWeatherData);
-    on<RefreshWeatherData>(_onLoadWeatherData);
+    on<LoadWeatherData>(_loadWeather);
+    on<RefreshWeatherData>(_loadWeather);
   }
 
-  Future<void> _onLoadWeatherData(
+  Future<void> _loadWeather(
     WeatherEvent event,
     Emitter<WeatherState> emit,
   ) async {
     emit(const WeatherState.loading());
     try {
-      final weatherData = await weatherRepository.getWeatherData();
-      emit(WeatherState.loaded(weatherData));
-    } catch (error) {
-      emit(WeatherState.error(error.toString()));
+      final data = await weatherRepository.getWeatherData();
+      emit(WeatherState.loaded(data));
+    } catch (e) {
+      emit(WeatherState.error(e.toString()));
     }
   }
 }

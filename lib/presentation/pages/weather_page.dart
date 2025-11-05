@@ -19,28 +19,24 @@ class WeatherPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: () {
-              context.read<WeatherBloc>().add(
-                const WeatherEvent.refreshWeatherData(),
-              );
-            },
+            onPressed: () => context.read<WeatherBloc>().add(
+              const WeatherEvent.refreshWeatherData(),
+            ),
           ),
         ],
       ),
       body: BlocBuilder<WeatherBloc, WeatherState>(
-        builder: (context, state) {
-          return state.when(
-            initial: () => const WeatherLoading(),
-            loading: () => const WeatherLoading(),
-            loaded: (weatherData) => WeatherList(weatherData: weatherData),
-            error: (message) => WeatherError(
-              message: message,
-              onRetry: () => context.read<WeatherBloc>().add(
-                const WeatherEvent.refreshWeatherData(),
-              ),
+        builder: (context, state) => state.when(
+          initial: () => const WeatherLoading(),
+          loading: () => const WeatherLoading(),
+          loaded: (data) => WeatherList(weatherData: data),
+          error: (msg) => WeatherError(
+            message: msg,
+            onRetry: () => context.read<WeatherBloc>().add(
+              const WeatherEvent.refreshWeatherData(),
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/entities/weather_entity.dart';
 
 part 'weather_model.freezed.dart';
 part 'weather_model.g.dart';
@@ -15,15 +14,4 @@ class WeatherModel with _$WeatherModel {
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) =>
       _$WeatherModelFromJson(json);
-}
-
-extension WeatherModelExtension on WeatherModel {
-  WeatherEntity toEntity() {
-    return WeatherEntity(
-      windSpeed: windSpeed,
-      temperature: temperature,
-      apparentTemperature: apparentTemperature,
-      time: time,
-    );
-  }
 }

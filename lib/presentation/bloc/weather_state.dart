@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/entities/weather_entity.dart';
+import '../../data/models/weather_model.dart';
 
 part 'weather_state.freezed.dart';
 
@@ -7,7 +7,7 @@ part 'weather_state.freezed.dart';
 class WeatherState with _$WeatherState {
   const factory WeatherState.initial() = WeatherInitial;
   const factory WeatherState.loading() = WeatherLoadingState;
-  const factory WeatherState.loaded(List<WeatherEntity> weatherData) =
+  const factory WeatherState.loaded(List<WeatherModel> weatherData) =
       WeatherLoaded;
   const factory WeatherState.error(String message) = WeatherErrorState;
 }
